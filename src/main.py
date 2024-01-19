@@ -2,7 +2,7 @@ import pygame as pg
 from entity import Square
 
 FPS = 60
-SCREEN_SIZE = (1280, 720)
+SCREEN_SIZE = (1920, 1080)
 
 def main():
     pg.init()
@@ -20,13 +20,14 @@ def main():
     font = pg.font.Font(None, 33)
 
     squares = [
-        Square((100, 360 + 200), 50, color=pg.Color(153, 51, 155), vel=200, screen_size=SCREEN_SIZE),
-        Square((100, 360 + 200), 50, color=pg.Color(102, 155, 102), vel=100, acc=20, screen_size=SCREEN_SIZE),
-        Square((100, 360 + 200), 50, color=pg.Color(0, 76, 153), vel=100, acc=-40, screen_size=SCREEN_SIZE, condition=lambda x, y: -y if x < -600 else y),
+        Square((100, 830), 80, color=pg.Color(153, 51, 155), vel=200, screen_size=SCREEN_SIZE),
+        Square((100, 830), 80, color=pg.Color(102, 155, 102), vel=0, acc=50, screen_size=SCREEN_SIZE),
+        Square((100, 830), 80, color=pg.Color(0, 76, 153), vel=300, acc=-50, screen_size=SCREEN_SIZE, condition=lambda x, y: -y if x < -600 else y),
     ]
 
     # Inicializa as variáveis para controlar a ativação de quadrados
     current_square = 0
+    delay_timer = 0
 
     # main loop
     running = True
@@ -45,7 +46,17 @@ def main():
 
         # Atualiza e desenha apenas o quadrado atual
         square = squares[current_square]
+        
+        # Adiciona um atraso se a velocidade for 0
+        # if square.velocity == 0:
+        #     delay_timer += dt
+        #     if delay_timer >= 1:  # 1 segundo de atraso
+        #         delay_timer = 0
+        #         square.velocity = square.initial_vel
+        # else:
+            
         square.update(dt)
+
         square.draw(screen)
 
         text = font.render(f"Quadrado {current_square + 1} - {square.get_info()}", True, pg.Color('white'))
