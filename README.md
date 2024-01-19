@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Concluído-brightgreen" alt="Status do Projeto">
+  <img src="https://img.shields.io/badge/Linguagem-Python-blue" alt="Linguagem Python">
+</p>
+<p align="center">
+  <img src="img/block-velocity.gif" alt="Gif em que o bloco se move em diferentes tipos de movimentos">
+</p>
+
 ### Simulação de Movimentos Retilíneos
 A pergunta feita em sala era mais ou menos essa: 
 
@@ -12,8 +20,14 @@ Caso não tenham sinais iguais, significa que se o movimento tiver um intervalo 
 
 Para elucidar melhor, eu fiz a simulação de 3 movimentos:
 
-1. O primeiro deles é um movimento com apenas velocidade constante, como vocês podem ver a aceleração dele é nula.
+1. O primeiro deles é um movimento com apenas velocidade constante, como vocês podem ver a aceleração dele é nula. 
+<img src="img/square1.png">
+
 
 2. O segundo movimento tem a componente da aceleração, que é o vetor em branco. Ele é constante, mas podemos ver que a aceleração a favor do movimento faz com que o módulo do vetor cresça.
+   
+<img src="img/square2.png">
 
 3. O terceiro movimento tem os dois vetores em sentidos opostos, isso implica que ele irá acelerar, ficar com a velocidade nula, depois trocar o sentido do movimento. Quando o sentido da aceleração e velocidade ficam iguais, é possível notar novamente um período de aceleração.
+   
+<img src="img/square3.png">
